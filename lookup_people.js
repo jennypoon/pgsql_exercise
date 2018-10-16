@@ -20,7 +20,18 @@ client.connect((err) => {
       return console.error("error running query", err);
     }
     console.log('Searching...')
-    console.log(result.rows[0].first_name, result.rows[0].last_name + ", born " +result.rows[0].birthdate)
+
+    // function getResult(arr) {
+    //   let counter = 0;
+    //   arr.forEach(elm => {
+
+    //   })
+
+    // }
+
+    console.log("- 1:", result.rows[0].first_name, result.rows[0].last_name + ", born " +result.rows[0].birthdate)
+
+    console.log("- 2:", result.rows[1].first_name, result.rows[1].last_name + ", born " +result.rows[1].birthdate)
 
     client.end();
   });

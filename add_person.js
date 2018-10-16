@@ -27,5 +27,3 @@ knex('famous_people').insert([{
   .finally(() => {
         knex.destroy();
   });
-
-console.log(knex.from('famous_people').select('*'))

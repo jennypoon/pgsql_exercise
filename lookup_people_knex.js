@@ -2,6 +2,7 @@ const pg = require("pg");
 
 const settings = require("./settings"); // settings.json
 
+//Connection to Database
 const knex = require('knex')({
   client: 'pg',
   version: '5.7',

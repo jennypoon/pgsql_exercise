@@ -23,7 +23,7 @@ knex('famous_people').insert([{
   last_name: `${process.argv[3]}`,
   birthdate: `${process.argv[4]}`
 }])
-  .then(() => console.log("data inserted"))
+  .then(() => console.log("Data inserted into table"))
   .finally(() => {
         knex.destroy();
   });

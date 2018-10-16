@@ -20,7 +20,7 @@ function getOutput(arr) {
 }
 
 
-//DATABASE
+//DATABASE QUERY
 client.connect((err) => {
   if (err) {
     return console.error("Connection Error", err);

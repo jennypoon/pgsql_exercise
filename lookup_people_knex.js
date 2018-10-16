@@ -24,7 +24,6 @@ function getOutput(arr) {
   });
 }
 
-
 //DATABASE QUERY
 knex.from('famous_people').select('*')
     .where('first_name', 'like', `${process.argv[2]}`)

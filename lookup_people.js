@@ -10,6 +10,16 @@ const client = new pg.Client({
   ssl      : settings.ssl
 });
 
+
+//CALLBACK FUNCTION
+function getResult(arr) {
+  arr.forEach(function(elm, i) {
+    console.log(`- ${i + 1}: ${elm.first_name} ${elm.last_name}, born ${elm.birthdate.toISOString().split('T')[0]}`);
+  });
+}
+
+
+//DATABASE
 client.connect((err) => {
   if (err) {
     return console.error("Connection Error", err);
@@ -19,19 +29,14 @@ client.connect((err) => {
     if (err) {
       return console.error("error running query", err);
     }
-    console.log('Searching...')
+    console.log('Searching...');
+    //console.log(result.rows) Outputs array of data
+    //function to loop through each data and output information
 
-    // function getResult(arr) {
-    //   let counter = 0;
-    //   arr.forEach(elm => {
+    //Found 2 person(s) by the name 'Paul':
+    console.log(`Found ${result.rows.length} person(s) by the name '${process.argv[2]}':`)
+    getResult(result.rows)
 
-    //   })
-
-    // }
-
-    console.log("- 1:", result.rows[0].first_name, result.rows[0].last_name + ", born " +result.rows[0].birthdate)
-
-    console.log("- 2:", result.rows[1].first_name, result.rows[1].last_name + ", born " +result.rows[1].birthdate)
 
     client.end();
   });

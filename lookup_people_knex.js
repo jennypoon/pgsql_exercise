@@ -46,6 +46,7 @@ knex.from('famous_people').select('*')
 - Use asCallback for direction on what it should do with results
 - Escape string using backtick `
 - use knex.destroy to end connection
+- console.log(query.toSQL())s
 
 Code with pg only:
 client.connect((err) => {
